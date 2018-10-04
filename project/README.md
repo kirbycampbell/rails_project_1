@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I will be building a Rails app that incorporates users and login abilities.
 
-Things you may want to cover:
+Once logged in, users can add a new topic (like mountains):
 
-* Ruby version
+Once in their new topic, the user can add a photo url, statement, or both.  
 
-* System dependencies
+The User will then see a list of all of their topics, and can click into a topic to see a list of posts within a topic.
 
-* Configuration
+The user can set it to private or not, requiring another user to be a member as well to view, or not.
 
-* Database creation
+The user can also then edit, update, and or destroy their topics or posts.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Practice some CSS while building this as well.
