@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     if session[:name]
       render 'welcome'
     else
-      redirect_to :new
+      redirect_to new_user_path
     end
   end
 
