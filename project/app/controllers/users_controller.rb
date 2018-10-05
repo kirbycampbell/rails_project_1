@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def welcome
-    if session[:name]
+    if session[:id]
       render 'welcome'
     else
       redirect_to new_user_path
@@ -12,16 +12,24 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(@user)
+      flash[:success] = "Welcome to the Twumblstergram!"
+      session[:id] = params[:id]
+      redirect_to @user
     else
       render :new
     end
   end
 
+
   def show
     @user = User.find(params[:id])
+  end
+
+  def destroy
+    session.delete :name
+    redirect_to controller: 'application', action: 'start'
   end
 
 
