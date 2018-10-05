@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     if session[:id]
       render 'welcome'
     else
-      redirect_to new_user_path
+      redirect_to controller: 'application', action: 'start'
     end
   end
 
@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Welcome to the Twumblstergram!"
-      session[:id] = params[:id]
       redirect_to @user
     else
       render :new
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
 end

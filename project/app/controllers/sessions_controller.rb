@@ -1,17 +1,22 @@
 class SessionsController < ApplicationController
 
+
   def new
   end
 
   def create
-    return redirect_to(controller: 'sessions',
-                       action: 'new') if !params[:name] || params[:name].empty?
-    session[:id] = params[:id]
-    redirect_to controller: 'application', action: 'start'
+    user = User.find_by(email: params[:session][:email])
+    if user && user.authenticate(params[:session][:password])
+      log_in user
+      redirect_to user
+    else
+      flash.now[:danger] = 'Invalid email/password combination'
+      render 'new'
+    end
   end
 
   def destroy
-    session.delete :name
-    redirect_to controller: 'application', action: 'start'
+    log_out
+    redirect_to root_url
   end
 end
