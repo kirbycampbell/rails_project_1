@@ -2,6 +2,12 @@ class SessionsController < ApplicationController
 
 
   def new
+    if logged_in?
+      id = session[:user_id]
+      redirect_to user_path(id)
+    else
+      :new
+    end
   end
 
   def create

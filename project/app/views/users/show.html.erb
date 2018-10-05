@@ -1,1 +1,9 @@
 <h1>Heyoo <%= @user.name %>!</h1>
+
+<h3>
+  <% @user.topics.each do |topic| %>
+  <%= link_to topic.title, topic_path %>
+  <% end %>
+</h3>
+
+ <%= link_to('Logout', logout_path, method: :destroy) %>
