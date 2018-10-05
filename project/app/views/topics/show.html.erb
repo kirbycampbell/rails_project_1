@@ -1,5 +1,6 @@
 <h1><%= @topic.title %></h1>
 <%= link_to "Add Photo", new_topic_photo_path(@topic) %>
+<%= link_to "Add Statement", new_topic_statement_path(@topic) %>
 <h3>
   <% @photos.each do |photo| %>
     <p><%= photo.image_url %></p><br>
