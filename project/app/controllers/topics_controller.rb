@@ -18,6 +18,8 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @photos = @topic.photos
+    @statements = @topic.statements
   end
 
   private

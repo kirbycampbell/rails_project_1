@@ -2,8 +2,8 @@
 
 <h3>
   <%= link_to "Create New Topic", new_topic_path %>
-  <% @user.topics.each do |topic| %>
-  <%= link_to topic.title, topic_path %>
+  <% @topics.each do |topic| %>
+  <%= link_to topic.title, topic %>
   <% end %>
 </h3>
 

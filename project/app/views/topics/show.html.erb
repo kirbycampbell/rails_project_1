@@ -1,1 +1,13 @@
 <h1><%= @topic.title %></h1>
+<%= link_to "Add Photo", new_topic_photo_path(@topic) %>
+<h3>
+  <% @photos.each do |photo| %>
+    <p><%= photo.image_url %></p><br>
+  <% end %>
+</h3>
+
+<h3>
+  <% @statements.each do |statement| %>
+    <p><%= statement.content %></p><br>
+  <% end %>
+</h3>
