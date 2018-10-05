@@ -1,0 +1,43 @@
+NOTES for how the database works:::::::::
+
+::VERBOSE:::
+user = User.new
+user.name = "Kirby"
+user.save
+
+topic = Topic.new
+topic.title = "Some cool title"
+topic.user = user
+topic.save
+
+photo = Photo.new
+photo.image_url = "something.img"
+photo.topic = topic
+photo.save
+
+statement = Statement.new
+statement.content = "A really cool statement to go along with my topic"
+statement.topic = topic
+statement.save
+
+::Test that Associations worked:::
+user.statements
+(((This Should show that users statements)))
+
+
+
+::: LESS VERBOSE ::::
+
+user2 = User.create(name: "John")
+topic2 = Topic.create(title: "Some Other Cool Title", user: user2)
+photo2 = Photo.create(image_url: "Coolpic.img", topic: topic2)
+statement2 = Statement.create(content: "Sweet Tent", topic: topic2)
+statement3 = Statement.create(content: "Another Tent", topic: topic2)
+
+::: Test & Examples that its working :::
+user2.statements.order(:content)
+user2.statements.order(content: :desc)
+user2.topics
+Topic.find_by user_id: 2
+Topic.where("user_id = 1")
+user2.statements.where("topic_id = 2")
