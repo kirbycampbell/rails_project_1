@@ -7,4 +7,13 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }, uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+  before_create :randomize_id
+
+
+  private
+    def randomize_id
+      begin
+        self.id = SecureRandom.random_number(1_000_000)
+      end while Statement.where(id: self.id).exists?
+    end
 end
