@@ -41,3 +41,8 @@ user2.topics
 Topic.find_by user_id: 2
 Topic.where("user_id = 1")
 user2.statements.where("topic_id = 2")
+
+For the project- Build a link on the start page to log in with the test
+account, which will be pre-loaded with topics and content.
+
+Also, iterate through image files as a recommendation on the new photos form page
