@@ -3,8 +3,10 @@
 <%= link_to "Add Statement", new_topic_statement_path(@topic) %>
 <h3>
   <% @photos.each do |photo| %>
-    <p><%= photo.image_url %> <%= link_to "Delete this", controller: 'photos', action: 'destroy' %></p><br>
-    
+    <p><%= photo.image_url %> <%= link_to "Delete this", photo, :method => :delete %></p><br>
+      <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+      <% end %>
   <% end %>
 </h3>
 

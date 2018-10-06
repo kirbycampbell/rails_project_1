@@ -23,14 +23,28 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:photo_id])
+    raise params.inspect
   end
 
   def destroy
-    raise params.inspect
-    Photo.find(:photo_id).destroy
-    flash[:success] = "Photo Deleted"
-    redirect_to topic_path
+  #  raise photo.inspect
+  #  photo = Photo.find(:photo_id)
+  #
+  #  photo.destroy
+  #  flash[:success] = "Photo Deleted"
+  #  redirect_to topic_path
+
+    @photo = Photo.find(params[:id])
+    @topic = @photo.topic
+    if @photo.destroy
+      redirect_to topic_path(@topic)
+      flash[:success] = "Photo Deleted"
+    else
+      redirect_to topic_path(@topic)
+      flash[:success] = "Unable to Delete"
+    end
   end
+
 
   private
 
