@@ -7,7 +7,6 @@ class PhotosController < ApplicationController
   def new
     @photo = Photo.new
     @topic = Topic.find(params[:topic_id])
-
   end
 
   def create
@@ -15,6 +14,7 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
     @photo.topic = @topic
     if @photo.save
+      flash[:notice] = "Photo successfully added to #{@topic.title.upcase}"
       redirect_to @topic
     else
       render :new
@@ -23,25 +23,17 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:photo_id])
-    raise params.inspect
   end
 
   def destroy
-  #  raise photo.inspect
-  #  photo = Photo.find(:photo_id)
-  #
-  #  photo.destroy
-  #  flash[:success] = "Photo Deleted"
-  #  redirect_to topic_path
-
     @photo = Photo.find(params[:id])
     @topic = @photo.topic
     if @photo.destroy
+      flash[:notice] = "Photo Deleted"
       redirect_to topic_path(@topic)
-      flash[:success] = "Photo Deleted"
     else
+      flash[:notice] = "Unable to Delete"
       redirect_to topic_path(@topic)
-      flash[:success] = "Unable to Delete"
     end
   end
 

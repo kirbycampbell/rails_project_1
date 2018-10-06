@@ -22,22 +22,7 @@ class TopicsController < ApplicationController
     @statements = @topic.statements
   end
 
-  def destroy
-  #  raise photo.inspect
-  #  photo = Photo.find(:photo_id)
-  #
-  #  photo.destroy
-  #  flash[:success] = "Photo Deleted"
-  #  redirect_to topic_path
-    @photo = Photo.find(params[:id])
-    @topic = @photo.topic
-    if @photo.destroy
-      render :show
-      flash[:success] = "Photo Deleted"
-    else
-      redirect_to topic_path(@topic)
-    end
-  end
+
   private
 
   def topic_params

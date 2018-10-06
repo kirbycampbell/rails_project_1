@@ -1,17 +1,18 @@
 <h1><%= @topic.title %></h1>
 <%= link_to "Add Photo", new_topic_photo_path(@topic) %>
 <%= link_to "Add Statement", new_topic_statement_path(@topic) %>
-<h3>
-  <% @photos.each do |photo| %>
-    <p><%= photo.image_url %> <%= link_to "Delete this", photo, :method => :delete %></p><br>
-      <% if flash[:notice] %>
-        <div class="notice"><%= flash[:notice] %></div>
-      <% end %>
-  <% end %>
-</h3>
+  <p>      <% if flash[:notice] %>
+            <div class="notice"><%= flash[:notice] %></div>
+         <% end %>
+  </p>
 
-<h3>
-  <% @statements.each do |statement| %>
-    <p><%= statement.content %></p><br>
+  <% @photos.each do |photo| %>
+    <h3><%= photo.image_url %></h3>
+    <p><%= link_to "Delete this", photo, :method => :delete %></p><br>
   <% end %>
-</h3>
+
+
+  <% @statements.each do |statement| %>
+    <h3><%= statement.content %></h3>
+    <p><%= link_to "Delete this", statement, :method => :delete %></p><br>
+  <% end %>
