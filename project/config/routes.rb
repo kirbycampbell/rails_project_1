@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
-  
+
+  get 'auth/:provider/callback', to: 'sessions#oauth'
+  get 'auth/failure', to: redirect('/')
+
   resources :topics do
     resources :photos
     resources :statements

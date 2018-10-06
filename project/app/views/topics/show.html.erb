@@ -7,7 +7,7 @@
   </p>
 
   <% @photos.each do |photo| %>
-    <h3><%= photo.image_url %></h3>
+    <div class='photos'><img src="<%= photo.image_url %>"></div>
     <p><%= link_to "Delete this", photo, :method => :delete %></p><br>
   <% end %>
 

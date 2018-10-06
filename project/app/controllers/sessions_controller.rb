@@ -21,6 +21,17 @@ class SessionsController < ApplicationController
     end
   end
 
+  def oauth
+    #raise request.env["omniauth.auth"].inspect
+    user = User.from_omniauth(request.env["omniauth.auth"])
+    if user
+      log_in user
+      redirect_to user
+    else
+      render 'new'
+    end
+  end
+
   def destroy
     log_out
     redirect_to root_url
