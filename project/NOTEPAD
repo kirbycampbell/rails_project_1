@@ -46,3 +46,5 @@ For the project- Build a link on the start page to log in with the test
 account, which will be pre-loaded with topics and content.
 
 Also, iterate through image files as a recommendation on the new photos form page
+
+I need to make only the user's feed be deleteable.  Other User's Topic Pages will only be viewable to other users.

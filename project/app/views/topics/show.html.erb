@@ -1,4 +1,4 @@
-<h1><%= @topic.title %></h1>      <h3><%= link_to "All of Your Topics", user_path(@topic.user) %></h3>
+<h1><%= @topic.user.name %>'s <%= @topic.title %></h1>      <h3><%= link_to "All of #{@topic.user.name}'s Topics", user_path(@topic.user) %></h3>
 <%= link_to "Add Photo", new_topic_photo_path(@topic) %>
 <%= link_to "Add Statement", new_topic_statement_path(@topic) %>
   <p>      <% if flash[:notice] %>
