@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :require_login
+  before_action :only_see_own_page, only: [:show]
 
   def new
     @topic = Topic.new
@@ -20,6 +21,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @photos = @topic.photos
     @statements = @topic.statements
+
   end
 
 
@@ -27,5 +29,14 @@ class TopicsController < ApplicationController
 
   def topic_params
     params.require(:topic).permit(:title, :user)
+  end
+
+  def only_see_own_page
+    @topic = Topic.find(params[:id])
+    @user = @topic.user
+
+    if current_user != @user
+      redirect_to root_path, notice: "Sorry, but you are only allowed to view your own profile page."
+    end
   end
 end
