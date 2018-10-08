@@ -1,10 +1,7 @@
 <h1>Heyoo <%= @user.name %>!</h1>
 
 <h3>
-  <%= link_to "Create New Topic", new_topic_path %><br>
   <% @topics.each do |topic| %>
   <div class="topic"><%= link_to topic.title, topic %></div><br>
   <% end %>
 </h3>
-
- <%= link_to('Logout', logout_path, method: :destroy) %>

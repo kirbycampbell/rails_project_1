@@ -15,15 +15,17 @@
       <% if !logged_in? %>
         <li class="button-main"><%= link_to "Home", topic_all_path, :class => "button-words" %></li>
         <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-words" %></li>
-        <li class="button-main"><%= link_to "World of ", topic_all_path, :class => "button-words" %></li>
-        <li class="button-main"><%= link_to "Login", topic_all_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "Signup ", new_user_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "Login", login_path, :class => "button-words" %></li>
       <% else %>
-        <li class="button-main"><%= link_to "My Home", topic_all_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "My Home", user_path(current_user), :class => "button-words" %></li>
         <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-words" %></li>
-        <li class="button-main"><%= link_to "World of Photos", topic_all_path, :class => "button-words" %></li>
-        <li class="button-main"><%= link_to "Logout", topic_all_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "Create New Topic", new_topic_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "Logout", logout_path, method: :destroy, :class => "button-words" %></li>
       <% end %>
     </ul>
-    <%= yield %>
+    <div class="main">
+      <%= yield %>
+    </div>
   </body>
 </html>

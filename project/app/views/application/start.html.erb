@@ -1,9 +1,21 @@
-<h1>Start Page</h1>
+<h1>Welcome to The You Verse</h1>
 <p>      <% if flash[:notice] %>
           <div class="notice"><%= flash[:notice] %></div>
        <% end %>
 </p>
-<div>
-  <%= link_to "Login", login_path %><br>
-  <%= link_to "Sign Up", new_user_path %><br>
+<div class="start-page">
+  <p>Welcome to my Rails Project!  This page shows many skills that I have been developing over the past several months.
+  </p><br>
+  <p>---------------------------------------------------------------------------------------------------------------------------</p>
+  <p>Here are some instructions on using the page:</p><br>
+  <p>---------------------------------------------------------------------------------------------------------------------------</p>
+  <p>The Top Left button takes you to this page.  World of Topics takes you to a feed of all posts once logged in.  Login and Signup do as they say.
+  </p><br>
+  <p>---------------------------------------------------------------------------------------------------------------------------</p>
+  <p>Once logged in, you will be taken to your home page, where you can create topics.</p><br>
+  <p>---------------------------------------------------------------------------------------------------------------------------</p>
+  <p>Within those topics you may add photos or statements.</p><br>
+  <p>---------------------------------------------------------------------------------------------------------------------------</p>
+  <p>You add photos by finding a .jpg or .png link online and pasting it into the photo form!</p>
+
 </div>

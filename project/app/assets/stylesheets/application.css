@@ -1,18 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 *{
   margin: 0%;
   padding: 0%;
@@ -21,16 +6,30 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.main{
+  padding: 30px;
+}
+
+.start-page{
+  padding: 20px;
+  background: white!important;
+  border-radius: 5px;
+}
+
+.start-page p{
+  background: white!important;
+
+}
+
 .topic {
-  color: #fff!important;
-  background-color: #616161!important;
-  width: 98.5%;
+
   display: inline-block;
   text-decoration: none;
   text-align: center;
   box-sizing: inherit;
   font-family: Verdana,sans-serif;
 }
+
 .top-bar{
   padding: 40px;
   margin: 0px;
@@ -46,19 +45,18 @@
 .button-main{
   float: left;
   border-radius: 3px;
-  background: blue;
   color: white;
 }
 
 .button-words{
-    color: white;
-    display:   flex;
-    font-size: 20px;
-    flex-grow:  1;
-    flex-shrink: 1;
-    justify-content: center;
-    padding: 20px;
-    text-decoration:none;
-    border-radius: 5px;
-    background: #49295e;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  justify-content: center;
+  padding: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  background: #49295e;
 }
