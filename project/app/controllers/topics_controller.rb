@@ -23,6 +23,12 @@ class TopicsController < ApplicationController
     @statements = @topic.statements
   end
 
+  def show_all
+    @topics = Topic.all.order('created_at DESC')
+    @statements = Statement.all.order('created_at DESC')
+    @photos = Photo.all.order('created_at DESC')
+  end
+
 
   private
 

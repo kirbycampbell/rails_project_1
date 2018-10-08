@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
 .topic {
   color: #fff!important;
   background-color: #616161!important;
@@ -22,4 +27,25 @@
   text-align: center;
   box-sizing: inherit;
   font-family: Verdana,sans-serif;
+}
+.top-bar{
+  padding: 40px;
+  margin: 0px;
+  width: 100%;
+  background: linear-gradient(-45deg, #57cfb0, #2ab5d3);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-gap: 5px;
+  list-style: none;
+}
+
+.button-main{
+  text-align: center;
+  float: left;
+  border-radius: 3px;
+  padding: 20px;
+
+  background: blue;
+  color: white;
 }

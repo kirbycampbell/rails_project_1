@@ -1,0 +1,8 @@
+<h1>World of Topics</h1>
+  <% @photos.each do |photo| %>
+  <div class="item-1">
+    <%= button_to photo.topic.title, topic_path(photo.topic.id) %>
+    <img src="<%= photo.image_url %>">
+    <p>Posted at: <%= photo.created_at %></p>
+  </div>
+  <% end %>

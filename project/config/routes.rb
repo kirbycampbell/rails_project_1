@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'auth/:provider/callback', to: 'sessions#oauth'
   get 'auth/failure', to: redirect('/')
+  post '/topics/:id' => 'topics#show'
 
   resources :topics do
     resources :photos
@@ -17,5 +18,8 @@ Rails.application.routes.draw do
   end
   resources :photos
   resources :statements
+
+  get '/topic_all' => 'topics#show_all'
+  post '/topic_all' => 'topics#show_all'
 
 end
