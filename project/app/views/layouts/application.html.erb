@@ -12,10 +12,17 @@
   <body>
 
     <ul class="top-bar">
-      <li class="button-main"><%= link_to "My Home", topic_all_path, :class => "button-words" %></li>
-      <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-words" %></li>
-      <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-words" %></li>
-      <li class="button-main"><%= link_to "Logout", topic_all_path, :class => "button-words" %></li>
+      <% if !logged_in? %>
+        <li class="button-main"><%= link_to "Home", topic_all_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "World of ", topic_all_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "Login", topic_all_path, :class => "button-words" %></li>
+      <% else %>
+        <li class="button-main"><%= link_to "My Home", topic_all_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "World of Photos", topic_all_path, :class => "button-words" %></li>
+        <li class="button-main"><%= link_to "Logout", topic_all_path, :class => "button-words" %></li>
+      <% end %>
     </ul>
     <%= yield %>
   </body>
