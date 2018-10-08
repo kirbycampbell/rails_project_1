@@ -4,7 +4,7 @@
     <title>The You Verse</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,10 +12,10 @@
   <body>
 
     <ul class="top-bar">
-      <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-main" %></li>
-      <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-main" %></li>
-      <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-main" %></li>
-      <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-main" %></li>
+      <li class="button-main"><%= link_to "My Home", topic_all_path, :class => "button-words" %></li>
+      <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-words" %></li>
+      <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-words" %></li>
+      <li class="button-main"><%= link_to "Logout", topic_all_path, :class => "button-words" %></li>
     </ul>
     <%= yield %>
   </body>
