@@ -18,7 +18,10 @@
 
 .start-page p{
   background: white!important;
+}
 
+.error{
+  color: red;
 }
 
 .topic {
@@ -45,7 +48,7 @@
 .button-main{
   float: left;
   border-radius: 3px;
-  color: white;
+
 }
 
 .button-words{

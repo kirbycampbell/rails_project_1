@@ -1,6 +1,10 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 
+<% if !@user.valid? %>
+<p class="error"><%= @user.errors.full_messages %></p>
+<% end %>
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
@@ -18,7 +22,7 @@
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
-    
+
     <title>Google Auth SignIn </title>
     <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
 

@@ -17,9 +17,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Twumblstergram!"
+      flash[:notice] = "Welcome to the The You Verse!"
       redirect_to @user
     else
+      flash[:notice] = "Messed up!"
       render :new
     end
   end

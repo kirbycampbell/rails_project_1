@@ -13,15 +13,15 @@
 
     <ul class="top-bar">
       <% if !logged_in? %>
-        <li class="button-main"><%= link_to "Home", topic_all_path, :class => "button-words" %></li>
-        <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-words" %></li>
-        <li class="button-main"><%= link_to "Signup ", new_user_path, :class => "button-words" %></li>
-        <li class="button-main"><%= link_to "Login", login_path, :class => "button-words" %></li>
+        <%= link_to "Home", topic_all_path, :class => "button-words" %>
+        <%= link_to "Topic Feed", topic_all_path, :class => "button-words" %>
+        <%= link_to "Signup ", new_user_path, :class => "button-words" %>
+        <%= link_to "Login", login_path, :class => "button-words" %>
       <% else %>
-        <li class="button-main"><%= link_to "My Home", user_path(current_user), :class => "button-words" %></li>
-        <li class="button-main"><%= link_to "World of Topics", topic_all_path, :class => "button-words" %></li>
-        <li class="button-main"><%= link_to "Create New Topic", new_topic_path, :class => "button-words" %></li>
-        <li class="button-main"><%= link_to "Logout", logout_path, method: :destroy, :class => "button-words" %></li>
+        <%= link_to "My Home", user_path(current_user), :class => "button-words" %>
+        <%= link_to "Topic Feed", topic_all_path, :class => "button-words" %>
+        <%= link_to "Create New Topic", new_topic_path, :class => "button-words" %>
+        <%= link_to "Logout", logout_path, method: :destroy, :class => "button-words" %>
       <% end %>
     </ul>
     <div class="main">
